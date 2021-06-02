@@ -1,0 +1,388 @@
+/* 
+
+COLORS:
+- - - - - - - - - - 
+#053333 - dark green
+#00C7CC - light aqua
+
+#131326 - dark
+#E5E52E - yellow
+
+*/
+
+
+
+/* Global styles
+================================================== */
+
+html {
+    height: 100%;
+    
+    font-family: 'Titillium Web', Arial, san-serif;
+    /*line-height: 1.7em;*/
+    color: #131326;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
+}
+.center {
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+
+h1, h2, h3, h4, h5, h3 span {
+    
+}
+h2, h3, h4, h5 {
+    font-weight: normal;
+}
+h2 { letter-spacing: 3px; font-size: 2.2em; }
+h3 { letter-spacing: 2px; font-size: 1.9em; }
+h4 { letter-spacing: 1px; font-size: 1.2em; }
+
+a {
+    text-decoration: none;
+}
+#body a, #body .link {
+    color: #6b9;
+}
+#body a:hover, #body .link:hover {
+    color: #ddd;
+    text-shadow: 0 0 .25em #6b9;
+    cursor: pointer;
+}
+
+#nprogress .spinner-icon {
+    display: none;
+}
+
+.delayed {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+
+/* Main Blocks
+================================================== */
+
+#menu button {
+    /*visibility: hidden;*/
+}
+
+#header, #splash, #content {
+    width: 100%;
+}
+
+#header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    height: 120px;
+}
+.header-left, .header-right {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.header-center {
+    text-align: center;
+}
+
+#header h5 {
+    margin: 0;
+    padding: 3px 0 0;
+    border-top: 6px solid #E5E52E;
+    
+    letter-spacing: 2px;
+    font-size: .9em;
+    color: #053333;
+    background-color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+#header h2 {
+    margin: -2px 0px -7px 0px;
+    padding-left: 10px;
+    
+    font-weight: 700;
+    letter-spacing: 10px;
+    font-size: 2.5em;
+    color: #00C7CC;
+}
+#currentMonth {
+    float: right;
+    margin: 0 .5em;
+    
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 4em;
+    color: #00C7CC;
+}
+#hawaiianMonth {
+    margin: 0 .5em;
+    
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    font-size: 4.4em;
+    color: #053333;
+}
+#currentYear {
+    margin-right: 1.75em;
+}
+
+#menu {
+    position: fixed;
+    top: 2px;
+    
+    margin-left: 64%;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: rgba(230, 230, 45, .4);
+}
+#menu button {
+    padding: .3em .8em;
+    margin: .25em .1em;
+    line-height: 1.3em;
+}
+
+#calendar {
+    
+}
+
+
+
+/* Calendar
+================================================== */
+
+svg {
+    background: #fff;
+}
+
+.headers, .dateTitle, .dateMoonLabel {
+    
+}
+.headers rect {
+    fill: #E5E52E;
+}
+.headers rect.z0 {
+    opacity: .5;
+}
+.headers rect.z1 {
+    opacity: .33;
+}
+.headers .eng {
+    fill: #00C7CC;
+    font-size: 1em;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: .25px;
+    text-anchor: end;
+}
+.headers .hwn {
+    fill: #053333;
+    font-size: 1.25em;
+    letter-spacing: .25px;
+    text-anchor: start;
+}
+
+.dateTitle {
+    font-size: 1.5em;
+}
+.dateMoonLabel {
+    /*font-size: 1.2em;*/
+}
+.dateBox rect {
+    stroke: none;
+    fill: none;
+}
+.dateBox rect.mask {
+    fill: white;
+    opacity: .8;
+}
+.dateGrid line {
+    stroke: #053333;
+    stroke-width: 2px;
+    fill: none;
+    opacity: .75;
+}
+.dateHeader rect {
+    stroke: none;
+    fill: white;
+}
+.dateHeader line {
+    stroke: #bbb;
+    stroke-width: .5px;
+    fill: none;
+}
+
+.hour6 {
+    stroke: #b3b3b3;
+    stroke-width: 1px;
+    opacity: .9;
+}
+.hour1 {
+    stroke: #ddd;
+    stroke-width: .4px;
+    /*stroke-dasharray: 3, 3;*/
+    opacity: .75;
+}
+.tide {
+    stroke: #fff;
+    stroke-width: 1px;
+    opacity: .85;
+    /*stroke-dasharray: 3, 3;*/
+}
+.tide.t-2, .tide.t3 {
+    stroke: none;
+}
+.tideZero {
+    stroke: none;
+    fill: #A56E00;
+    opacity: .25;
+}
+
+text.hourTick, text.tideTick {
+    font-size: .7em;
+    fill: #131326;
+    opacity: .63;
+}
+line.tideTick, line.hourTick {
+    stroke: #131326;
+    opacity: .63;
+}
+
+
+
+
+/*.sunData rect {
+    stroke-width: 0;
+    fill: #f8f898;
+    opacity: .8;
+}*/
+.sunData line {
+    stroke: #A56E00;
+    stroke-width: 1px;
+}
+.sunData text {
+    font-size: 0.725em;
+    fill: #A56E00;
+}
+.sunData .symbol {
+    /*fill: none;*/
+    stroke: #A56E00;
+    stroke-width: 1px;
+}
+
+/*.moonData rect {
+    stroke-width: 0;
+    fill: #dde;
+    opacity: .8;
+}*/
+.moonData line {
+    stroke: #00C7CC;
+    stroke-width: 1px;
+}
+.moonData text {
+    font-size: 0.725em;
+    fill: #00C7CC;
+}
+.moonData .symbol {
+    /*fill: none;*/
+    stroke: #00C7CC;
+    stroke-width:.5px;
+}
+
+.sunData .symbol, .moonData .symbol {
+    font-size: .9em;
+}
+
+
+
+.tideGraph circle {
+    stroke: #28a;
+    stroke-width: .5px;
+    fill: #28a;
+    opacity: .9;
+}
+.tideGraph {
+    stroke: #28a;
+    stroke-width: 1.25px;
+    stroke-opacity: .64;
+    fill: #00C7CC;
+    fill-opacity: .24;
+}
+
+#clipCircles circle {
+    fill: #888;
+}
+.moonCycle .black {
+    fill: #131326;
+}
+.moonCycle .white {
+    fill: #fff;
+}
+.moonCycle .rim {
+    stroke: #131326;
+    stroke-width: .5px;
+    fill: none;
+}
+
+
+
+/* Responsive
+================================================== */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (min-width: 1152px) {
+    body{
+        font-size: 95%;
+    }
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 960px) and (max-width: 1151px) {
+    body{
+        font-size: 92%;
+    }
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 640px) and (max-width: 959px) {
+    body{
+        font-size: 88%;
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+    
+}
+@media only screen and (max-width: 639px) {
+    body{
+        font-size: 84%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    
+}
